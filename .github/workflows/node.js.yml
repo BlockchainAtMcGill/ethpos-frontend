@@ -11,8 +11,6 @@ on:
 
 jobs:
   build:
-    env:
-      directory: ./client
     runs-on: ubuntu-latest
 
     strategy:
