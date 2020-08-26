@@ -65,10 +65,10 @@ class CompleteButton extends React.Component {
 
 }
 
-function ReceiptButton() {
+function ReceiptButton(props) {
 
   function printReceipt() {
-    useRouter.push('/printTestReceipt');
+    useRouter.push(`/printTestReceipt?name=${props.description}&value=${props.value}&transactionHash=${props.transactionHash}`);
   }
   return (
       <button className="btn btn-primary" onClick={printReceipt}>
@@ -82,7 +82,8 @@ export default class DisplayQR extends React.Component {
     super(props);
     this.state = {
       isComplete: false,
-      isError: false
+      isError: false,
+      transactionHash: ''
     }
   }
 
@@ -95,7 +96,7 @@ export default class DisplayQR extends React.Component {
       complete = interactInstance.events.txCompleted((err, res) => {
         if (!err) {
           console.log(res);
-          this.setState({ isComplete: true });
+          this.setState({ isComplete: true, transactionHash: res.transactionHash });
         } else {
           console.error(err);
           this.setState({ isError: true });
@@ -129,7 +130,7 @@ export default class DisplayQR extends React.Component {
 
     let qrImageSrc = qrAPI.concat(userPage);
 
-    const receiptButton = (this.state.isComplete)? <ReceiptButton />: null;
+    const receiptButton = (this.state.isComplete)? <ReceiptButton description={data.description} value={data.priceETH} transactionHash={this.state.transactionHash}/>: null;
     return (
       <div>
         <Header />

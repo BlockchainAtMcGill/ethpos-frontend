@@ -4,23 +4,26 @@ import SecondaryNav from "../components/secondaryNav";
 // import { rate, priceUSD, priceETH, description, currency } from ".";
 import Link from 'next/link'
 import axios from 'axios';
+import { useRouter } from 'next/router'
 
 // Get transaction has
 // Get raspberry pi ip
 
 const RASPBERRY_PI_IP = process.env.NEXT_PUBLIC_RASPBERRY_PI_IP;
 
-export default function PrintTestReceipt(props) {
+export default function PrintTestReceipt() {
+
+  const router = useRouter();
+  const { description, value, transactionHash } = router.query;
+
   function printReceipt() {
-    // 'http://' + RASPBERRY_PI_IP + ':80/print/' + props.priceETH + '/' + props.description + '/' + transactionHash + '/'
-    axios.get('http://' + RASPBERRY_PI_IP + '/print/' + '5' + '/' + 'banana' + '/' + '0x4' + '/',
-      {})
-      .then(function (res) {
-        console.log(res);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    axios.get(`http://${RASPBERRY_PI_IP}/print/${value}/${description}/${transactionHash}/`)
+    .then(function (res) {
+      console.log(res);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
   return (
     <div>
