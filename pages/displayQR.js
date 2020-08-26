@@ -68,7 +68,7 @@ class CompleteButton extends React.Component {
 function ReceiptButton(props) {
 
   function printReceipt() {
-    useRouter.push(`/printTestReceipt?name=${props.description}&value=${props.value}&transactionHash=${props.transactionHash}`);
+    useRouter.push(`/printTestReceipt?description=${props.description}&value=${props.value}&transactionHash=${props.transactionHash}`);
   }
   return (
       <button className="btn btn-primary" onClick={printReceipt}>
