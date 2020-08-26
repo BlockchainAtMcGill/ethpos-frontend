@@ -1,4 +1,3 @@
-
 module.exports = {
 	env: {
 		NEXT_PUBLIC_HOST: process.env.NEXT_PUBLIC_HOST,
