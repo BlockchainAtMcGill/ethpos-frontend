@@ -1,0 +1,34 @@
+{
+  "name": "eth_pos",
+  "version": "1.0.0",
+  "description": "> Blockchain at McGill\r > Hardware Design Team 2019-2020",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@openzeppelin/cli": "^2.8.2",
+    "@openzeppelin/contracts": "^3.0.1",
+    "@openzeppelin/gsn-provider": "^0.1.10",
+    "@openzeppelin/network": "^0.4.2",
+    "@truffle/hdwallet-provider": "^1.0.35",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "@openzeppelin/gsn-helpers": "^0.2.3",
+    "@openzeppelin/upgrades": "^2.8.0"
+  },
+  "scripts": {
+    "test": "truffle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlockchainAtMcGill/eth_pos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BlockchainAtMcGill/eth_pos/issues"
+  },
+  "homepage": "https://github.com/BlockchainAtMcGill/eth_pos#readme"
+}

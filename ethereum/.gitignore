@@ -1,0 +1,6 @@
+.vscode/
+build/
+.openzeppelin\.session
+node_modules
+.env
+**/__pycache__/

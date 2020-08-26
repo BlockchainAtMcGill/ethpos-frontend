@@ -1,0 +1,39 @@
+{
+  "name": "ethpos-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "12.x"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -p $PORT"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.0",
+    "coingecko-api": "^1.0.10",
+    "es6-promise": "^4.2.8",
+    "ethereumjs-abi": "^0.6.8",
+    "ethereumjs-util": "^7.0.2",
+    "feather-icons": "^4.28.0",
+    "isomorphic-fetch": "^2.2.1",
+    "jquery": "^3.5.1",
+    "next": "^9.5.2",
+    "next-routes": "^1.4.2",
+    "popper.js": "^1.16.0",
+    "qrcode-react": "^0.1.16",
+    "react": "16.13.1",
+    "react-blob": "^2.1.0",
+    "react-dom": "16.13.1",
+    "react-feather": "^2.0.8",
+    "styled-components": "^5.1.1",
+    "web3": "^1.2.8"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "dotenv-webpack": "^1.8.0",
+    "mocha": "^7.2.0"
+  }
+}
