@@ -1,30 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+> Blockchain at McGill
+> Hardware Design Team 2019-2020
 
-## Getting Started
+## Ethereum and ERC20 Point of Sale Terminal  :iphone:
 
-First, run the development server:
+#### Introduction
+The hardware design team initiated by Blockchain at McGill is a multidisciplinary design team consisting of 4 McGill students. The purpose of the team is to create a working prototype of a physical point of sale terminal that will allow vendors to accept Ethereum or ERC-Token quasi-instantaneously.
 
-```bash
-npm run dev
-# or
-yarn dev
+#### Objectives
+As a point of sale terminal, the prototype will be self-contained and powered, allowing it to work in any setting equipped with wireless internet connectivity while incurring neutral operational costs after implementation by dynamically levying fees from transactions to pay for any decentralized computation or smart contract fees. The point of sale terminal will also feature all audit capabilities expected of point of sale terminals and have the capacity to electronically submit receipts of purchase or transaction metrics to client or vendor. Further given the risk-averse nature of the setting, the PoS terminal will enact measures to instantly switch all holdings into low risk assets that can be liquidated at vendor’s will (or automatically at specified trigger). The main design objective is to create a physical device that is easiest and cheapest to manufacture with existing hardware.
+
+#### Team
+The team consists of 3 engineers and a project lead, while falling directly under the supervision
+of the executive team. More specifically, the team is constituted of the following students:
+
+* Riad el Muriby, B. Eng. Mechanical (Lead)
+* Michel Majdalani, B. Eng. Software
+* Colton Campbell, B. Arts Computer Science
+* Sean Tan, B. Eng. Software
+
+#### Demo
+MP4 videos of our prototype can be found in the `demo` folder.
+
+#### Documentation
+All project documentation reports can be found in the *Documentation* directory. This includes:
+
+1. Technical Requirement Assessment
+2. Conceptual Design Report
+3. System Design Report
+4. Embodiment Design Report
+5. Final Report
+
+## How to use app
+1. visit our [production website](https://ethpos-frontend.herokuapp.com/) 
+2. login using vendor address: 0x24Ed9F7B74711F8E987E12821cb9FE2b82447B3C and password: testtest123
+3. **important** switch network to Rinkeby on MetaMask Chrome Extension
+4. allow our website to access Metamask
+
+## Setup to fork
+1. Fork this repo
+2. in `/client` create file `.env.local` with the following code: 
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+NEXT_PUBLIC_VENDOR_ADDRESS=<your_vendor_public_address>
+NEXT_PUBLIC_HOST=https://ethpos-backend.herokuapp.com
+NEXT_PUBLIC_RASPBERRY_PI_IP=<raspberry_pi_ip_address>
+NEXT_PUBLIC_NETWORK=rinkeby
+```
+3. run `npm install` in `/client` directory
+4. in `/backend` create file `.env` with the following code:
+```
+SECRET_KEY=(contact us)
+POSTGRES_PASSWORD=(contact us) 
+```
